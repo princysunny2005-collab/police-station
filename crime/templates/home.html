@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Police - Home</title>
+</head>
+<body>
+
+    <h1>Welcome to Kerala Police Station</h1>
+    <h2>Service | Security | Justice</h2>
+
+    <p>
+        Kerala Police is committed to maintaining peace,
+        protecting citizens, and ensuring public safety.
+    </p>
+
+    <h2>Our Mission</h2>
+    <p>
+        To provide reliable police services and protect
+        the rights and safety of every citizen.
+    </p>
+
+    <h2>Emergency Assistance</h2>
+    <p>For police emergencies, call 112.</p>
+    <a href="{% url 'complaint' %}">Complaints</a>
+
+</body>
+</html>
+{% endblock %}

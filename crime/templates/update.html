@@ -1,0 +1,90 @@
+Writing
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Complaint Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf0f7;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 550px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #bbb;
+        }
+
+        h1 {
+            text-align: center;
+            color: #102c54;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #102c54;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1b477d;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Police Complaint Form</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Enter your full name" required value="{{ data.name }}">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone"
+                   placeholder="Enter your phone number" required value="{{ data.phone }}">
+
+            <label for="complaint">Complaint Details</label>
+            <textarea id="complaint" name="complaint"
+                      rows="5" placeholder="Enter complaint details"
+                      required value="{{ data.complaint }}" ></textarea>
+
+            <button type="submit">Submit Complaint</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Entry Details</h1>
+    <table>
+        <tr>
+            <th>Full_Name</th>
+            <th>Phone_no</th>
+            <th>complaint</th>
+            <th>Update</th>
+            
+        </tr>
+        {% if data %}
+        {% for i in data %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.complaint }}</td>
+            <td><a href="{% url 'update' i.id %}"></a></td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </table>
+</body>
+</html>
